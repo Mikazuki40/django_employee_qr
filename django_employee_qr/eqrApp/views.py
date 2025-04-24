@@ -61,7 +61,7 @@ def home(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('login-page')
+    return redirect('login')
 
 
 @login_required
