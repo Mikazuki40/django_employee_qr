@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'eqrApp.apps.eqrAppConfig',
     'qr_code',
-    'eqrApp',
 ]
 
 MIDDLEWARE = [
