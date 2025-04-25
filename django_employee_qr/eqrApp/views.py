@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import require_http_methods
@@ -30,6 +31,11 @@ def home(request):
                               .order_by('-timestamp')[:10],
     }
     return render(request, 'home.html', context)
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
+
 
 @login_required
 @require_http_methods(["GET", "POST"])
